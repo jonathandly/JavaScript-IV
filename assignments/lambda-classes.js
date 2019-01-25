@@ -7,7 +7,7 @@ class Person {
         this.gender = personAttrs.gender;
     }
     speak() {
-        console.log(`Hell my name is ${this.name}, I am from ${this.location}.`);
+        return `Hello my name is ${this.name}, I am from ${this.location}.`;
     }
 }
 
@@ -19,10 +19,10 @@ class Instructor extends Person {
         this.catchPhrase = instructorAttrs.catchPhrase;
     }
     demo(subject) {
-        console.log(`Today we are learning about ${subject}`);
+        return `Today we are learning about ${subject}`;
     }
     grade(student, subject) {
-        console.log(`${student.name} receives a perfect score on ${subject}`);
+        return `${student.name} receives a perfect score on ${subject}`;
     }
 }
 
@@ -34,13 +34,13 @@ class Student extends Person {
         this.favSubjects = studentAttrs.favSubjects;
     }
     listsSubjects() {
-        console.log(`${this.favSubjects}`);
+        return `${this.favSubjects}`;
     }
     PRAssignment(subject) {
-        console.log(`${this.name} has submitted a PR for ${subject}`);
+        return `${this.name} has submitted a PR for ${subject}`;
     }
     sprintChallenge(subject) {
-        console.log(`${this.name} has begun sprint challenge on ${subject}`);
+        return `${this.name} has begun sprint challenge on ${subject}`;
     }
 }
 
@@ -51,10 +51,10 @@ class ProjectManager extends Instructor {
         this.favInstructor = projectManagerAttrs.favInstructor;
     }
     standUp(channel) {
-        console.log(`${this.name} announces to ${channel}, @channel standy times!`);
+        return `${this.name} announces to ${channel}, @channel standy times!`;
     }
     degugsCode(student, subject) {
-        console.log(`${this.name} debugs ${student.name}'s code on ${subject}`);
+        return `${this.name} debugs ${student.name}'s code on ${subject}`;
     }
 }
 
