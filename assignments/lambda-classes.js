@@ -24,6 +24,10 @@ class Instructor extends Person {
     grade(student, subject) {
         return `${student.name} receives a perfect score on ${subject}`;
     }
+    giveGrade(student) {
+        let rand = Math.random() * 10;
+        return `${student.grade + rand}`;
+    }
 }
 
 class Student extends Person {
@@ -32,6 +36,7 @@ class Student extends Person {
         this.previousBackground = studentAttrs.previousBackground;
         this.className = studentAttrs.className;
         this.favSubjects = studentAttrs.favSubjects;
+        this.grade = 80;
     }
     listsSubjects() {
         return `${this.favSubjects}`;
@@ -41,6 +46,13 @@ class Student extends Person {
     }
     sprintChallenge(subject) {
         return `${this.name} has begun sprint challenge on ${subject}`;
+    }
+    graduate() {
+        if(this.grade >= 70) {
+            return `${this.name} is able to Graduate.`;
+        } else {
+            return `${this.name} is not elible for Graduation`;
+        }
     }
 }
 
@@ -130,3 +142,6 @@ console.log(karen.standUp('webpt4-karen'));
 console.log(karen.degugsCode(joe, 'Functions'));
 console.log(karen.demo('redux'));
 console.log(karen.grade(joe, 'Prototypes'));
+console.log(karen.giveGrade(tina));
+
+console.log(joe.graduate());
