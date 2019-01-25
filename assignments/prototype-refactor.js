@@ -95,11 +95,11 @@ class Villain extends Humanoid {
         return `${this.name} has been vanquished!!`;
     }
     fire() {
-        if(`${knight.healthPoints} > 0`) {
-            knight.healthPoints -= 1;
-            return `${knight.name} takes fire damage and loses 1HP. HP-REMAINING: ${knight.healthPoints}`;
+        if(knight.healthPoints > 0) {
+            knight.healthPoints -= 2;
+            return `${knight.name} takes fire damage and loses 2HP. HP-REMAINING: ${knight.healthPoints}`;
         } else {
-            return this.death();
+            return knight.death();
         }
     }
 }
@@ -128,11 +128,11 @@ class Hero extends Humanoid {
         return `${this.name} has been slain!!`;
     }
     slash() {
-        if(`${demon.healthPoints} > 0`) {
-            demon.healthPoints -= 1;
-            return `${demon.name} is slashed and loses 1HP. HP-REMAINING: ${demon.healthPoints}`;
+        if(demon.healthPoints > 0) {
+            demon.healthPoints -= 2;
+            return `${demon.name} is slashed and loses 2HP. HP-REMAINING: ${demon.healthPoints}`;
         } else {
-            return this.death();
+            return demon.death();
         }
     }
 }  
@@ -144,7 +144,7 @@ const knight = new Hero({
       width: 2,
       height: 2,
     },
-    healthPoints: 2,
+    healthPoints: 10,
     name: 'Knight',
     weapons: [
       'Mace',
@@ -159,7 +159,7 @@ const demon = new Villain({
       width: 3,
       height: 3,
     },
-    healthPoints: 2,
+    healthPoints: 10,
     name: 'Demon',
     weapons: [
       'fireball',
@@ -220,10 +220,17 @@ const archer = new Humanoid({
   
 console.log(knight.slash());
 console.log(demon.fire());
-  
-  
 console.log(knight.slash());
 console.log(demon.fire());
+console.log(knight.slash());
+console.log(demon.fire());
+console.log(knight.slash());
+console.log(demon.fire());
+console.log(knight.slash());
+console.log(demon.fire());
+console.log(knight.slash());
+console.log(demon.fire());
+
 // console.log(mage.createdAt); // Today's date
 // console.log(archer.dimensions); // { length: 1, width: 2, height: 4 }
 // console.log(swordsman.healthPoints); // 15
